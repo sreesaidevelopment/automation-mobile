@@ -5,11 +5,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.Reporter;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumDriver;
+import utils.DeviceHelper;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -30,29 +33,32 @@ public class runTest extends preConditions {
 	public void startTest(String Mobile, String Password, String Category, String Location,
 			String Description, String Price, String Title, String ContactPerson, String Email, 
 			String noOfPhotos) throws InterruptedException, IOException {
-		try {
-			if (verifyWelcomeScreenIsDisplaying()) {
-				userLoginFromWelcomeScreen(Mobile, Password);
-			}
-			if (loggedInUserMobile.equalsIgnoreCase(Mobile)) {
-				firstTimeLogin(noOfPhotos, Category, Location, Title, Description, Price, ContactPerson, Email);
-			} else {
-				logout();
-				userLoginFromHomeScreen(Mobile, Password);
-				firstTimeLogin(noOfPhotos, Category, Location, Title, Description, Price, ContactPerson, Email);
-			}
-		} catch (Exception e) {
+		if (verifyWelcomeScreenIsDisplaying()) {
+			userLoginFromWelcomeScreen(Mobile, Password);
+		}
+		if (loggedInUserMobile.equalsIgnoreCase(Mobile)) {
+			firstTimeLogin(noOfPhotos, Category, Location, Title, Description, Price, ContactPerson, Email);
+		} else {
+			logout();
+			userLoginFromHomeScreen(Mobile, Password);
+			firstTimeLogin(noOfPhotos, Category, Location, Title, Description, Price, ContactPerson, Email);
+		}
+	}
+	
+	@AfterMethod
+	public void getResults(ITestResult result) throws IOException {
+		
+		if (result.getStatus() == ITestResult.FAILURE) {
 			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			//The below method will save the screen shot in d drive with name "screenshot.png"
 			String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
 			File screenShotName = new File("Screenshot"+timeStamp+".png");
 			FileUtils.copyFile(scrFile, screenShotName);
-			
-			String filePath = screenShotName.toString();
-			String path = "<img src=\"file://" + filePath + "\" alt=\"\"/>";
-			Reporter.log(e.toString());
+			String filePath = System.getProperty("user.dir") +"/"+screenShotName.toString();
+			String path = "<br><img src='"+filePath+"' height ='550' width='350'/><br>";
+			Reporter.log(result.toString());
 			Reporter.log(path);
-			Assert.fail("Please find the attachment for the issue.");
+			openHomeScreen();
 		}
 	}
 	
@@ -84,6 +90,7 @@ public class runTest extends preConditions {
 	public void firstTimeLogin(String noOfPohotos, String Category, String Location, String Title, String Description,
 			String Price, String ContactPerson, String Email) throws InterruptedException {
 		openPostAdForm();
+		verifyThatRecoveryPopupAppearing();
 		attachImagesFromGallery(noOfPohotos);
 		fillAdForm(Title, Description, ContactPerson, Email, Category, Price, Location);
 		loggedInUserMobile = getUserMobileNumber();

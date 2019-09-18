@@ -1,51 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" ignored="0" total="2" passed="0">
+<testng-results skipped="0" failed="1" ignored="0" total="5" passed="4">
   <reporter-output>
+    <line>
+      <![CDATA[[TestResult name=startTest status=FAILURE method=runTest.startTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:kz.olx.runTest@7e0b0338] output={null}]]]>
+    </line>
+    <line>
+      <![CDATA[<br><img src='/Users/mtpl/Automation/olx/Screenshot20190919_033923.png' height ='550' width='350'/><br>]]>
+    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="394456" started-at="2019-09-17T22:20:47Z" finished-at="2019-09-17T22:27:22Z">
+  <suite name="Default suite" duration-ms="527809" started-at="2019-09-18T22:01:56Z" finished-at="2019-09-18T22:10:44Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="394456" started-at="2019-09-17T22:20:47Z" finished-at="2019-09-17T22:27:22Z">
+    <test name="Default test" duration-ms="527809" started-at="2019-09-18T22:01:56Z" finished-at="2019-09-18T22:10:44Z">
       <class name="kz.olx.runTest">
-        <test-method status="PASS" signature="launchApp()[pri:0, instance:kz.olx.runTest@6e1ec318]" name="launchApp" is-config="true" duration-ms="16962" started-at="2019-09-17T22:20:47Z" finished-at="2019-09-17T22:21:04Z">
+        <test-method status="PASS" signature="launchApp()[pri:0, instance:kz.olx.runTest@7e0b0338]" name="launchApp" is-config="true" duration-ms="28631" started-at="2019-09-18T22:01:56Z" finished-at="2019-09-18T22:02:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApp -->
-        <test-method status="FAIL" signature="startTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:kz.olx.runTest@6e1ec318]" name="startTest" duration-ms="143512" started-at="2019-09-17T22:21:04Z" data-provider="getCsvData" finished-at="2019-09-17T22:23:28Z">
+        <test-method status="PASS" signature="startTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:kz.olx.runTest@7e0b0338]" name="startTest" duration-ms="110777" started-at="2019-09-18T22:02:24Z" data-provider="getCsvData" finished-at="2019-09-18T22:04:15Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[77079154354]]>
+                <![CDATA[77767517099]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[KNF8KBMK]]>
+                <![CDATA[792267SM]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[cat1]]>
+                <![CDATA[cat6]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Алматы, Ауэзовский район]]>
+                <![CDATA[Алматы, Алатауский район]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[sell iPhone in excellent condition, under warranty]]>
+                <![CDATA[sell Sony PlayStation plus games, plus two joysticks]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[100000]]>
+                <![CDATA[70000]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[Iphone x]]>
+                <![CDATA[sony plastation 4]]>
               </value>
             </param>
             <param index="7">
@@ -64,46 +70,88 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Please find the attachment for the issue.]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Please find the attachment for the issue.
-at org.testng.Assert.fail(Assert.java:96)
-at kz.olx.runTest.startTest(runTest.java:53)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startTest -->
-        <test-method status="FAIL" signature="startTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:kz.olx.runTest@6e1ec318]" name="startTest" duration-ms="231529" started-at="2019-09-17T22:23:28Z" data-provider="getCsvData" finished-at="2019-09-17T22:27:19Z">
+        <test-method status="PASS" signature="getResults(org.testng.ITestResult)[pri:0, instance:kz.olx.runTest@7e0b0338]" name="getResults" is-config="true" duration-ms="1" started-at="2019-09-18T22:04:15Z" finished-at="2019-09-18T22:04:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=startTest status=SUCCESS method=runTest.startTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:kz.olx.runTest@7e0b0338] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResults -->
+        <test-method status="PASS" signature="startTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:kz.olx.runTest@7e0b0338]" name="startTest" duration-ms="78204" started-at="2019-09-18T22:04:15Z" data-provider="getCsvData" finished-at="2019-09-18T22:05:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[77767517099]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[792267SM]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cat3]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Алматы, Алатауский район]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[sell a great camera nikon]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[50000]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[nikon]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[кирил]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[tregfjfj@mail.ru]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTest -->
+        <test-method status="PASS" signature="getResults(org.testng.ITestResult)[pri:0, instance:kz.olx.runTest@7e0b0338]" name="getResults" is-config="true" duration-ms="1" started-at="2019-09-18T22:05:33Z" finished-at="2019-09-18T22:05:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=startTest status=SUCCESS method=runTest.startTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:kz.olx.runTest@7e0b0338] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResults -->
+        <test-method status="PASS" signature="startTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:kz.olx.runTest@7e0b0338]" name="startTest" duration-ms="98104" started-at="2019-09-18T22:05:33Z" data-provider="getCsvData" finished-at="2019-09-18T22:07:12Z">
           <params>
             <param index="0">
               <value>
@@ -117,27 +165,27 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             </param>
             <param index="2">
               <value>
-                <![CDATA[cat2]]>
+                <![CDATA[cat4]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Алматы, Акмалинский район]]>
+                <![CDATA[Алматы, Алатауский район]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[sell Samsung in excellent condition, under warranty]]>
+                <![CDATA[sell a great camera canon]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[100000]]>
+                <![CDATA[50000]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[Samsung]]>
+                <![CDATA[Canon]]>
               </value>
             </param>
             <param index="7">
@@ -152,18 +200,126 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             </param>
             <param index="9">
               <value>
-                <![CDATA[2]]>
+                <![CDATA[3]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTest -->
+        <test-method status="PASS" signature="getResults(org.testng.ITestResult)[pri:0, instance:kz.olx.runTest@7e0b0338]" name="getResults" is-config="true" duration-ms="0" started-at="2019-09-18T22:07:12Z" finished-at="2019-09-18T22:07:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=startTest status=SUCCESS method=runTest.startTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:kz.olx.runTest@7e0b0338] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResults -->
+        <test-method status="FAIL" signature="startTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:kz.olx.runTest@7e0b0338]" name="startTest" duration-ms="130335" started-at="2019-09-18T22:07:12Z" data-provider="getCsvData" finished-at="2019-09-18T22:09:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[77767517099]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[792267SM]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cat5]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Алматы, Алатауский район]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[sell Sony PlayStation plus games]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[70000]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Ps4]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[кирил]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[tregfjfj@mail.ru]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Please find the attachment for the issue.]]>
+              <![CDATA[An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Admins-MacBook-Air.local', ip: 'fe80:0:0:0:c96:6d90:adce:c7cc%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.5', java.version: '1.8.0_211'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appActivity: pl.tablica2.app.startup.act..., appPackage: kz.slando, autoGrantPermissions: true, automationName: UiAutomator2, browserName: , databaseEnabled: false, desired: {appActivity: pl.tablica2.app.startup.act..., appPackage: kz.slando, autoGrantPermissions: true, automationName: UiAutomator2, browserName: , deviceName: Redmi 4, platformName: android, platformVersion: 7.1.2, udid: 8da7f05c7d44}, deviceApiLevel: 25, deviceManufacturer: Xiaomi, deviceModel: Redmi 4, deviceName: 8da7f05c7d44, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 8da7f05c7d44, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2, platform: LINUX, platformName: Android, platformVersion: 7.1.2, statBarHeight: 50, takesScreenshot: true, udid: 8da7f05c7d44, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: 06cd69ba-c189-4815-b219-73a9fbb82dab
+*** Element info: {Using=xpath, value=//*[@text='Реклама']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Please find the attachment for the issue.
-at org.testng.Assert.fail(Assert.java:96)
-at kz.olx.runTest.startTest(runTest.java:53)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Admins-MacBook-Air.local', ip: 'fe80:0:0:0:c96:6d90:adce:c7cc%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.5', java.version: '1.8.0_211'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appActivity: pl.tablica2.app.startup.act..., appPackage: kz.slando, autoGrantPermissions: true, automationName: UiAutomator2, browserName: , databaseEnabled: false, desired: {appActivity: pl.tablica2.app.startup.act..., appPackage: kz.slando, autoGrantPermissions: true, automationName: UiAutomator2, browserName: , deviceName: Redmi 4, platformName: android, platformVersion: 7.1.2, udid: 8da7f05c7d44}, deviceApiLevel: 25, deviceManufacturer: Xiaomi, deviceModel: Redmi 4, deviceName: 8da7f05c7d44, deviceScreenDensity: 320, deviceScreenSize: 720x1280, deviceUDID: 8da7f05c7d44, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2, platform: LINUX, platformName: Android, platformVersion: 7.1.2, statBarHeight: 50, takesScreenshot: true, udid: 8da7f05c7d44, viewportRect: {height: 1230, left: 0, top: 50, width: 720}, warnings: {}, webStorageEnabled: false}
+Session ID: 06cd69ba-c189-4815-b219-73a9fbb82dab
+*** Element info: {Using=xpath, value=//*[@text='Реклама']}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:239)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
+at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:61)
+at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at io.appium.java_client.DefaultGenericMobileDriver.findElementByXPath(DefaultGenericMobileDriver.java:151)
+at io.appium.java_client.AppiumDriver.findElementByXPath(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.findElementByXPath(AndroidDriver.java:1)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:57)
+at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+at kz.olx.preConditions.submitForm(preConditions.java:342)
+at kz.olx.runTest.firstTimeLogin(runTest.java:97)
+at kz.olx.runTest.startTest(runTest.java:44)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -191,11 +347,95 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startTest -->
-        <test-method status="PASS" signature="closeApp()[pri:0, instance:kz.olx.runTest@6e1ec318]" name="closeApp" is-config="true" duration-ms="2363" started-at="2019-09-17T22:27:19Z" finished-at="2019-09-17T22:27:22Z">
+        <test-method status="PASS" signature="getResults(org.testng.ITestResult)[pri:0, instance:kz.olx.runTest@7e0b0338]" name="getResults" is-config="true" duration-ms="3108" started-at="2019-09-18T22:09:22Z" finished-at="2019-09-18T22:09:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=startTest status=FAILURE method=runTest.startTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:kz.olx.runTest@7e0b0338] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[[TestResult name=startTest status=FAILURE method=runTest.startTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:kz.olx.runTest@7e0b0338] output={null}]]]>
+            </line>
+            <line>
+              <![CDATA[<br><img src='/Users/mtpl/Automation/olx/Screenshot20190919_033923.png' height ='550' width='350'/><br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- getResults -->
+        <test-method status="PASS" signature="startTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:kz.olx.runTest@7e0b0338]" name="startTest" duration-ms="76091" started-at="2019-09-18T22:09:25Z" data-provider="getCsvData" finished-at="2019-09-18T22:10:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[77767517099]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[792267SM]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cat6]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Алматы, Алатауский район]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[sell Sony PlayStation plus games, plus two joysticks]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[70000]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[plastation]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[кирил]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[tregfjfj@mail.ru]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTest -->
+        <test-method status="PASS" signature="getResults(org.testng.ITestResult)[pri:0, instance:kz.olx.runTest@7e0b0338]" name="getResults" is-config="true" duration-ms="1" started-at="2019-09-18T22:10:41Z" finished-at="2019-09-18T22:10:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=startTest status=SUCCESS method=runTest.startTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:kz.olx.runTest@7e0b0338] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResults -->
+        <test-method status="PASS" signature="closeApp()[pri:0, instance:kz.olx.runTest@7e0b0338]" name="closeApp" is-config="true" duration-ms="2502" started-at="2019-09-18T22:10:41Z" finished-at="2019-09-18T22:10:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
