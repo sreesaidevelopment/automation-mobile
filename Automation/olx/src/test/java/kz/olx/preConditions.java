@@ -10,17 +10,22 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.ServerSocket;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -61,8 +66,44 @@ public class preConditions
 	public static AppiumDriverLocalService service;
 	private AppiumServiceBuilder builder;
 	private DesiredCapabilities cap;
-	public AndroidDriver<MobileElement> driver;
+	public static AndroidDriver<MobileElement> driver;
+	ExtentReports extent;
+	ExtentTest logger;
+		
 	
+	@BeforeTest
+	 public void startReport(){
+	 extent = new ExtentReports (System.getProperty("user.dir") +"/OlxReport.html", true);
+	 extent.addSystemInfo("Host Name", "SoftwareTestingMaterial")
+	       .addSystemInfo("Environment", "Automation Testing")
+	       .addSystemInfo("User Name", "Sreesai");
+	  extent.loadConfig(new File("/Users/mtpl/Automation/olx/extent-config.xml"));
+	 }
+	@AfterTest
+	 public void endReport(){
+        extent.flush();
+        //Call close() at the very end of your session to clear all resources. 
+        //If any of your test ended abruptly causing any side-affects (not all logs sent to ExtentReports, information missing), this method will ensure that the test is still appended to the report with a warning message.
+        //You should call close() only once, at the very end (in @AfterSuite for example) as it closes the underlying stream. 
+        //Once this method is called, calling any Extent method will throw an error.
+        //close() - To close all the operation
+        extent.close();
+	 }
+	
+	//driver and screenshotName
+	public static String getScreenshot(String screenshotName) throws Exception {
+	                //below line is just to append the date format with the screenshot name to avoid duplicate names 
+	 String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+	 TakesScreenshot ts = (TakesScreenshot) driver;
+	 File source = ts.getScreenshotAs(OutputType.FILE);
+	 //after execution, you could see a folder "FailedTestsScreenshots" under src folder
+	 String destination = System.getProperty("user.dir") + "/FailedTestsScreenshots/"+screenshotName+dateName+".png";
+	 File finalDestination = new File(destination);
+	 FileUtils.copyFile(source, finalDestination);
+	                //Returns the captured file path
+	 return destination;
+	}
+
 	public void userLoginFromWelcomeScreen(String Mobile, String Password){
 		driver.findElement(By.id("kz.slando:id/loginWithEmail")).click();
 		driver.findElement(By.xpath("//*[@resource-id='kz.slando:id/edtEmail']//*[@resource-id='kz.slando:id/value']")).sendKeys(Mobile);
@@ -303,6 +344,7 @@ public class preConditions
     		driver.findElement(By.id("kz.slando:id/accept")).click();
 		}else {
 			Assert.assertEquals(driver.findElement(By.id("kz.slando:id/accept")).isEnabled(), true);
+			logger.log(LogStatus.FAIL, "Location options are not populating in location screen");
 		}
     	
     }
@@ -379,7 +421,8 @@ public class preConditions
 	}
   }
   
-  public void openHomeScreen() {
+  public void openHomeScreen() throws InterruptedException {
+	  Thread.sleep(3000);
 	  MobileElement title = driver.findElement(By.xpath("//*[@resource-id='kz.slando:id/action_bar']/android.widget.TextView"));
 	  if (title.getText().equalsIgnoreCase("Местоположение") || (title.getText().equalsIgnoreCase("Выбор изображения"))) {
 		  backToHomeScreen();

@@ -7,7 +7,9 @@
         <methods>
           <include name="closeApp"/>
           <include name="getResults"/>
-          <include name="startTest" invocation-numbers="3"/>
+          <include name="startTest" invocation-numbers="1 2"/>
+          <include name="endReport"/>
+          <include name="startReport"/>
           <include name="launchApp"/>
         </methods>
       </class> <!-- kz.olx.runTest -->

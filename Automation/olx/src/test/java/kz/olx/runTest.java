@@ -11,6 +11,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.relevantcodes.extentreports.LogStatus;
+
 import io.appium.java_client.AppiumDriver;
 import utils.DeviceHelper;
 
@@ -30,9 +32,11 @@ public class runTest extends preConditions {
 	public static String loggedUserName = "";
 
 	@Test(dataProvider = "getCsvData")
-	public void startTest(String Mobile, String Password, String Category, String Location,
+	public void creatingAd(String Mobile, String Password, String Category, String Location,
 			String Description, String Price, String Title, String ContactPerson, String Email, 
 			String noOfPhotos) throws InterruptedException, IOException {
+		logger = extent.startTest("Adding olx ad", Mobile+","+Password+","+Category+","+Location+","+
+			Description+","+Price+","+Title+","+ContactPerson+","+Email+","+noOfPhotos);
 		if (verifyWelcomeScreenIsDisplaying()) {
 			userLoginFromWelcomeScreen(Mobile, Password);
 		}
@@ -46,20 +50,24 @@ public class runTest extends preConditions {
 	}
 	
 	@AfterMethod
-	public void getResults(ITestResult result) throws IOException {
-		
-		if (result.getStatus() == ITestResult.FAILURE) {
-			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			//The below method will save the screen shot in d drive with name "screenshot.png"
-			String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-			File screenShotName = new File("Screenshot"+timeStamp+".png");
-			FileUtils.copyFile(scrFile, screenShotName);
-			String filePath = System.getProperty("user.dir") +"/"+screenShotName.toString();
-			String path = "<br><img src='"+filePath+"' height ='550' width='350'/><br>";
-			Reporter.log(result.toString());
-			Reporter.log(path);
-			openHomeScreen();
+	public void getResults(ITestResult result) throws Exception {
+		if(result.getStatus() == ITestResult.FAILURE){
+			 logger.log(LogStatus.FAIL, "Test Case Failed is "+result.getName());
+			 logger.log(LogStatus.FAIL, "Test Case Failed is "+result.getThrowable());
+			 //To capture screenshot path and store the path of the screenshot in the string "screenshotPath"
+			                        //We do pass the path captured by this mehtod in to the extent reports using "logger.addScreenCapture" method. 
+			                        String screenshotPath = getScreenshot(result.getName());
+			 //To add it in the extent report 
+			 logger.log(LogStatus.FAIL, logger.addScreenCapture(screenshotPath));
+			 openHomeScreen();
+		}else if(result.getStatus() == ITestResult.SKIP){
+			 logger.log(LogStatus.SKIP, "Test Case Skipped is "+result.getName());
+		}else if (result.getStatus() == ITestResult.SUCCESS) {
+			logger.log(LogStatus.PASS, result.getName()+"is Test Case passed");
 		}
+			 // ending test
+		//endTest(logger) : It ends the current test and prepares to create HTML report
+		extent.endTest(logger);
 	}
 	
 	@DataProvider
