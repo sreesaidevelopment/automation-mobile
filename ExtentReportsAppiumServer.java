@@ -1,7 +1,7 @@
-	//ExtentReports extent;
-	//ExtentTest logger;
+	ExtentReports extent;
+	ExtentTest logger;
 	
-	/*
+	
 	@BeforeTest
 	 public void startReport(){
 	 extent = new ExtentReports (System.getProperty("user.dir") +"/ExtentReport.html", true);
@@ -21,7 +21,7 @@
 	 }
 	 extent.endTest(logger);
 	 }
-	 */
+	 
 	
 	public void startAppiumServer() {
 		//Set Capabilities
